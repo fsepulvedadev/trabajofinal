@@ -26,10 +26,11 @@ fetch("https://pokeapi.co/api/v2/pokemon", {
 
 function createPokeCard(obj) {
   let newPokeCard = document.createElement("poke-card");
-  /* let currentDiv = document.querySelector(".container") */
   var newImg = obj[0].sprites.front_default;
+  // ninguno de estas dos valores esta llegando al componente, llegan como null
   newPokeCard.pokemonName = obj[0].species.name;
   newPokeCard.pokemonImg = newImg;
+  // el type esta funcionando
   newPokeCard.pokemonElement = obj[0].types[0].type.name;
 
   document.body.appendChild(newPokeCard);
